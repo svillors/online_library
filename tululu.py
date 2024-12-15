@@ -65,7 +65,7 @@ def parse_book_page(source):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Скачивает обложки книг и сами книги с сайта "tululu.org"')
-    parser.add_argument('-start_id', default=1)
-    parser.add_argument('-end_id', default=10)
+    parser.add_argument('start_id', default=1, type=int, nargs='?')
+    parser.add_argument('end_id', default=10, type=int, nargs='?')
     args = parser.parse_args()
     download_books(args.start_id, args.end_id)
